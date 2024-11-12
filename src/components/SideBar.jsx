@@ -20,43 +20,43 @@ export const SideBar = () => {
   };
 
   return (
-    <nav className=" bg-slate-400 py-4 absolute bottom-0 w-full sm:w-32 sm:h-full sm:fixed sm:top-0 sm:left-0 sm:flex sm:items-center sm:justify-center">
+    <nav className=" bg-custom-blue py-4 absolute bottom-0 w-full sm:w-32 sm:h-full sm:fixed sm:top-0 sm:left-0 sm:flex sm:items-center sm:justify-center">
       <ul className=" flex justify-evenly gap-8 sm:flex-col sm:gap-16">
         <li
-          className="text-white cursor-pointer hover:scale-125 transition duration-200 flex flex-col justify-center items-center font-bold"
+          className=" text-custom-white cursor-pointer hover:scale-125 transition duration-200 flex flex-col justify-center items-center font-bold"
           onMouseEnter={() => mauseEntered("home")}
           onMouseLeave={mauseExit}
           onClick={()=>clikeado("home")}
         >
           <FaHome size={30} />
-          {(textIcon === 'home' || cliked === 'home') && <span className=" text-xs">Home</span>}
+          {(textIcon === 'home' || cliked === 'home') && <span className=" text-xs py-3">Home</span>}
         </li>
         <li
-          className="text-white cursor-pointer hover:scale-125 transition duration-200 flex flex-col justify-center items-center font-bold"
+          className=" text-custom-white cursor-pointer hover:scale-125 transition duration-200 flex flex-col justify-center items-center font-bold"
           onMouseEnter={() => mauseEntered("about")}
           onMouseLeave={mauseExit}
           onClick={()=>clikeado("about")}
         >
           <FaInfoCircle size={30} />
-          {(textIcon === 'about' || cliked === 'about') && <span className=" text-xs">About</span>}
+          {(textIcon === 'about' || cliked === 'about') && <span className=" text-xs py-3">About</span>}
         </li>
         <li
-          className="text-white cursor-pointer hover:scale-125 transition duration-200 flex flex-col justify-center items-center font-bold"
+          className=" text-custom-white cursor-pointer hover:scale-125 transition duration-200 flex flex-col justify-center items-center font-bold"
           onMouseEnter={() => mauseEntered("project")}
           onMouseLeave={mauseExit}
           onClick={()=>clikeado("project")}
         >
           <FaProjectDiagram size={30} />
-          {(textIcon === 'project' || cliked === 'project') && <span className=" text-xs">Projects</span>}
+          {(textIcon === 'project' || cliked === 'project') && <span className=" text-xs py-3">Projects</span>}
         </li>
         <li
-          className="text-white cursor-pointer hover:scale-125 transition duration-200 flex flex-col justify-center items-center font-bold"
+          className=" text-custom-white cursor-pointer hover:scale-125 transition duration-200 flex flex-col justify-center items-center font-bold"
           onMouseEnter={() => mauseEntered("contact")}
           onMouseLeave={mauseExit}
           onClick={()=>clikeado("contact")}
         >
           <FaPhoneAlt size={30} />
-          {(textIcon === 'contact' || cliked === 'contact') && <span className=" text-xs">Contact</span>}
+          {(textIcon === 'contact' || cliked === 'contact') && <span className=" text-xs py-3">Contact</span>}
         </li>
       </ul>
     </nav>
