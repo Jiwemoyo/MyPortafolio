@@ -84,7 +84,7 @@ export const SideBar = () => {
           )}
         </Link>
         <div
-        className="text-custom-white cursor-pointer hover:scale-125 transition duration-200 flex flex-col justify-center items-center font-bold mt-4"
+        className="text-custom-white cursor-pointer hover:scale-125 transition duration-200 flex flex-col justify-center items-center font-bold "
         onClick={toggleLanguage}
         onMouseEnter={() => mauseEntered("language")}
         onMouseLeave={mauseExit}

@@ -14,8 +14,7 @@ export const Home = () => {
           {t('profetion')}
         </h2>
         <p className=" font-bold text-custom-white sm:text-2xl">
-          Welcome to my digital universe, where creativity and technology merge
-          to create unique experiences.
+          {t("presentation")}
         </p>
         <li className="grid grid-cols-3 gap-8 text-custom-white mt-5 font-semibold sm:flex">
           <ul className=" animate-bg-fade bg-blue-500 p-2 rounded-lg ">Html</ul>
@@ -50,10 +49,10 @@ export const Home = () => {
         </li>
         <div className=" w-full flex justify-between gap-5 mt-5 sm:w-auto sm:gap-11">
         <button className=" font-bold text-custom-white bg-custom-red px-8 py-4 rounded-lg">
-          Projects
+          {t('button-Contact')}
         </button>
         <button className=" font-bold text-custom-white bg-custom-red px-8 py-4 rounded-lg">
-          Contact Me
+          {t('button-Projects')}
         </button>
       </div>
       </div>
