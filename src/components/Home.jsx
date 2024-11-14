@@ -1,12 +1,17 @@
+import { useTranslation } from "react-i18next";
+
 export const Home = () => {
+
+  const {t}=useTranslation()
+
   return (
     <div className="bg-custom-blue flex justify-center items-center h-screen">
       <div className="flex flex-col items-center justify-center h-screen gap-5 px-8 text-center sm:items-start sm:gap-11">
         <h1 className=" text-custom-celeste font-bold text-3xl sm:text-9xl">
-          Hi, I'm Alessandro
+          {t('greetings')}
         </h1>
         <h2 className=" text-custom-red font-bold text-2xl sm:text-5xl">
-          Web Developer & Designer
+          {t('profetion')}
         </h2>
         <p className=" font-bold text-custom-white sm:text-2xl">
           Welcome to my digital universe, where creativity and technology merge

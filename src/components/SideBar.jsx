@@ -5,9 +5,21 @@ import {
   FaInfoCircle,
   FaProjectDiagram,
   FaPhoneAlt,
+  FaGlobeAmericas
 } from "react-icons/fa";
+import { useTranslation } from "react-i18next";
 
 export const SideBar = () => {
+
+  const{t,i18n}=useTranslation()
+  const [language, setLanguage] = useState('en');
+
+  const toggleLanguage = () => {
+    const newLanguage = language === 'en' ? 'es' : 'en';
+    setLanguage(newLanguage);
+    i18n.changeLanguage(newLanguage); 
+  };
+
   const [textIcon, setTextIcon] = useState(null);
   const [cliked, setCliked] = useState("home");
 
@@ -71,6 +83,19 @@ export const SideBar = () => {
             <span className=" text-xs py-3">Contact</span>
           )}
         </Link>
+        <div
+        className="text-custom-white cursor-pointer hover:scale-125 transition duration-200 flex flex-col justify-center items-center font-bold mt-4"
+        onClick={toggleLanguage}
+        onMouseEnter={() => mauseEntered("language")}
+        onMouseLeave={mauseExit}
+      >
+        <FaGlobeAmericas size={30} />
+        {(textIcon === "language" || cliked === "language") && (
+          <span className="text-xs py-3">
+            {language === "en" ? "Español" : "English"}
+          </span>
+        )}
+      </div>
       </ul>
     </nav>
   );
