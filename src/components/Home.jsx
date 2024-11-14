@@ -12,7 +12,7 @@ export const Home = () => {
           Welcome to my digital universe, where creativity and technology merge
           to create unique experiences.
         </p>
-        <li className="grid grid-cols-3 gap-8 text-custom-white mt-8 font-semibold sm:flex">
+        <li className="grid grid-cols-3 gap-8 text-custom-white mt-5 font-semibold sm:flex">
           <ul className=" animate-bg-fade bg-blue-500 p-2 rounded-lg ">Html</ul>
           <ul className=" animate-bg-fade bg-blue-500 p-2 rounded-lg ">CSS</ul>
           <ul className=" animate-bg-fade bg-blue-500 p-2 rounded-lg ">JS</ul>
