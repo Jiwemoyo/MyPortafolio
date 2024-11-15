@@ -2,6 +2,19 @@
   "greetings": "Hi, I'm Alessandro",
   "profetion": "Web Developer & Designer",
   "presentation": "Welcome to my digital universe, where creativity and technology merge to create unique experiences.",
-  "button-Contact":"Contact me",
-  "button-Projects":"Projects"
+  "skills-home": {
+    "wD": "Web Designer",
+    "3D": "3D Design and Modeling",
+    "DS": "Software Developer"
+  },
+  "button-Contact": "Contact me",
+  "button-Projects": "Projects",
+  "about-presentation": "I am a passionate web developer with an eye for design and a mind for logic. With experience in creating dynamic and engaging web applications, I strive to combine functionality with aesthetics to deliver exceptional user experiences.",
+  "carer-path": "My Career Path",
+  "dates-about": {
+    "date1": "Designer at Sports Uniform Store",
+    "date2": "Front-end Developer at Linkeart",
+    "date3": "DevOps Assistant at KFC"
+  },
+  "skills": "skills"
 }

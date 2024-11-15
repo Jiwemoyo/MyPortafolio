@@ -2,6 +2,19 @@
   "greetings": "Hola, Soy Alessandro",
   "profetion": "Desarrollador Web & Disenador",
   "presentation": "Bienvenido a mi universo digital donde la tecnologia y creatividad se juntan",
-    "button-Contact":"Cantactame",
-  "button-Projects":"Proyectos"
+  "skills-home": {
+    "wD": "Maquetador Web",
+    "3D": "Diseno y modelado 3D",
+    "DS": "Desarrollador de Software"
+  },
+  "button-Contact": "Cantactame",
+  "button-Projects": "Proyectos",
+  "about-presentation": "Soy un apasionado desarrollador web con un ojo para el diseño y una mente para la lógica. Con experiencia en crear aplicaciones web dinámicas y atractivas, me esfuerzo por combinar funcionalidad con estética para ofrecer experiencias de usuario excepcionales.",
+  "carer-path":"Mi trayectoria",
+  "dates-about":{
+    "date1":"Diseñador en Tienda de Uniformes Deportivos",
+    "date2":"Desarrollador Front-end en Linkeart",
+    "date3":"Asistente DevOps en KFC"
+  },
+  "skills":"Habilidades"
 }
