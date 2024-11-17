@@ -8,7 +8,7 @@ import { Routes,Route } from "react-router-dom";
 
 function App() {
   return (
-    <>
+    <div className=" flex flex-col-reverse sm:flex sm:flex-row">
     <SideBar/>
     <Routes>
       <Route path="/" element={<Home/>}/>
@@ -16,7 +16,7 @@ function App() {
       <Route path="/projects" element={<Projects/>}/>
       <Route path="/contact" element={<Contact/>}/>
     </Routes>
-    </>
+    </div>
   );
 }
 
