@@ -33,7 +33,7 @@ export const SideBar = () => {
   };
 
   return (
-    <nav className="  bg-custom-blue fixed px-4  w-full sm:w-32 sm:flex sm:items-center sm:justify-center sm:static">
+    <nav className="  bg-custom-blue sticky bottom-0 px-4  py-8 w-full sm:w-32 sm:flex sm:items-center sm:justify-center sm:static">
       <ul className=" flex justify-evenly gap-8 sm:flex-col sm:gap-16">
         <Link
           to={"/"}

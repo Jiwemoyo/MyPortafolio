@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 export const About = () => {
   const { t } = useTranslation();
   return (
-    <div className="bg-custom-blue flex flex-col gap-6 justify-center items-center h-screen px-8 text-center text-custom-celeste text-xl font-semibold sm:w-full">
+    <div className="bg-custom-blue flex flex-col gap-6 justify-center items-center h-100 px-8 text-center text-custom-celeste text-xl font-semibold sm:w-full sm:h-screen">
       <p>{t("about-presentation")}</p>
       <h3 className=" text-custom-red text-2xl mt-5">{t("carer-path")}</h3>
       <ul className=" list-disc text-xl px-6 text-left text-custom-white space-y-4">
