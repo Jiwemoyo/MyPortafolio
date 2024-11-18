@@ -41,8 +41,8 @@ export const About = () => {
           Blender
         </li>
       </ul>
-      <h3 className=" text-custom-red text-2xl mt-5 sm:text-3xl ">{t("Philosophy")}</h3>
-      <p>{t("Philosophy-context")}</p>
+      <h3 className=" text-custom-red text-2xl mt-5 sm:text-3xl">{t("Philosophy")}</h3>
+      <p className=" bg-custom-red py-8 px-8 bg-opacity-25 rounded-lg">{t("Philosophy-context")}</p>
     </div>
   );
 };
