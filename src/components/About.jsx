@@ -3,10 +3,10 @@ import { useTranslation } from "react-i18next";
 export const About = () => {
   const { t } = useTranslation();
   return (
-    <div className="bg-custom-blue flex flex-col gap-6 justify-center items-center h-100 px-8 text-center text-custom-celeste text-xl font-semibold sm:w-full sm:h-screen">
+    <div className="bg-custom-blue flex flex-col gap-6 justify-center items-center h-100 px-8 text-center text-custom-celeste text-xl font-semibold sm:text-2xl sm:w-full sm:h-screen">
       <p>{t("about-presentation")}</p>
-      <h3 className=" text-custom-red text-2xl mt-5">{t("carer-path")}</h3>
-      <ul className=" list-disc text-xl px-6 text-left text-custom-white space-y-4">
+      <h3 className=" text-custom-red text-2xl sm:text-3xl mt-5">{t("carer-path")}</h3>
+      <ul className=" list-disc text-xl px-6 text-left text-custom-white space-y-4 sm:text-2xl">
         <li>
           {" "}
           <span className=" text-custom-celeste mr-8">2019 - 2020</span>
@@ -23,8 +23,8 @@ export const About = () => {
           {t("dates-about.date3")}
         </li>
       </ul>
-      <h3 className=" text-custom-red text-2xl mt-5">{t("skills")}</h3>
-      <ul className="grid grid-cols-3 gap-8 text-custom-white mt-5 font-semibold sm:flex sm:flex-wrap">
+      <h3 className=" text-custom-red text-2xl mt-5 sm:text-3xl ">{t("skills")}</h3>
+      <ul className="grid grid-cols-3 gap-8 text-custom-white mt-5 font-semibold sm:flex sm:flex-wrap ">
         <li className="animate-bg-fade bg-blue-500 p-2 rounded-lg">Html</li>
         <li className="animate-bg-fade bg-blue-500 p-2 rounded-lg">CSS</li>
         <li className="animate-bg-fade bg-blue-500 p-2 rounded-lg">JS</li>
@@ -41,7 +41,7 @@ export const About = () => {
           Blender
         </li>
       </ul>
-      <h3 className=" text-custom-red text-2xl mt-5">{t("Philosophy")}</h3>
+      <h3 className=" text-custom-red text-2xl mt-5 sm:text-3xl ">{t("Philosophy")}</h3>
       <p>{t("Philosophy-context")}</p>
     </div>
   );
