@@ -1,6 +1,7 @@
 import React from "react";
-
+import { useTranslation } from "react-i18next";
 export const ProjectsCard = ({data}) => {
+  const { t } = useTranslation();
   return (
     <div className="flex flex-col bg-white bg-opacity-10 rounded-lg shadow-lg overflow-hidden">
     <img src={data.img} alt="imgproyect" className="rounded-t-lg w-full h-64 object-cover" />
@@ -22,7 +23,7 @@ export const ProjectsCard = ({data}) => {
         target="_blank"
         href={data.Link}
       >
-        Enlace Proyecto
+        {t("VP")}
       </a>
     </div>
   </div>
