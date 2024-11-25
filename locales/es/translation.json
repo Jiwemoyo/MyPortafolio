@@ -21,5 +21,12 @@
   "Philosophy-context":"Creo en la fusión de la tecnología y la creatividad para resolver problemas y crear experiencias digitales memorables. Mi objetivo es seguir aprendiendo y creciendo en este campo en constante evolución, mientras contribuyo a proyectos que tengan un impacto positivo en el mundo.",
   "Proyects-title":"Mis proyectos",
   "Proyects-presentation":"Aquí hay una selección de proyectos en los que he trabajado. Cada uno demuestra diferentes habilidades y tecnologías.",
-  "VP":"Ver Proyecto"
+  "VP":"Ver Proyecto",
+  "contact-title":"Contáctame",
+  "contact-subtitle":"¿Tienes alguna pregunta o propuesta? No dudes en contactarme. Estaré encantado de escucharte.",
+  "contact-info-title":"Información de Contacto",
+  "form-name-placeholder":"Nombre",
+  "form-email-placeholder":"Email",
+  "form-message-placeholder":"Mensaje",
+  "form-submit-button":"Enviar Mensaje"
 }
