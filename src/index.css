@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components{
+    .fondo{
+        @apply bg-custom-blue flex justify-center items-center w-screen
+    }
+}
