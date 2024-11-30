@@ -12,45 +12,30 @@ export const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault();
-
     emailjs
       .sendForm('service_im8x4pe', 'template_4pnvlak', form.current, {
         publicKey: '25e3DIpVlNzn8HQnL',
       })
       .then(
         () => {
-          // Show success alert
           setAlert('success');
-          
-          // Reset form fields
           form.current.reset();
-
-          // Hide alert after 3 seconds
-          setTimeout(() => {
-            setAlert(null);
-          }, 3000);
+          setTimeout(() => setAlert(null), 3000);
         },
         (error) => {
-          // Show error alert
           setAlert('error');
-          
-          // Hide alert after 3 seconds
-          setTimeout(() => {
-            setAlert(null);
-          }, 3000);
+          setTimeout(() => setAlert(null), 3000);
         },
       );
   };
 
   return (
-    <div className="bg-custom-blue flex justify-center items-center w-screen sm:align-middle">
+    <div className="bg-custom-blue min-h-screen w-full flex items-center justify-center px-4 md:px-8">
       {/* Alert Component */}
       {alert && (
         <div 
           className={`fixed top-4 right-4 z-50 px-4 py-2 rounded-md text-white ${
-            alert === 'success' 
-              ? 'bg-green-500' 
-              : 'bg-red-500'
+            alert === 'success' ? 'bg-green-500' : 'bg-red-500'
           }`}
         >
           {alert === 'success' 
@@ -60,94 +45,92 @@ export const Contact = () => {
         </div>
       )}
 
-      <div className="flex flex-col items-center justify-center h-screen gap-5 px-8 text-center sm:items-start sm:gap-11 w-full max-w-4xl">
-        <h2 className="text-custom-red font-bold text-2xl sm:text-5xl text-center sm:text-left sm:mx-auto">
-          {t("contact-title")}
-        </h2>
+      <div className="max-w-5xl w-full py-8 space-y-8">
+        {/* Header Section */}
+        <div className="space-y-4 text-center">
+          <h2 className="text-custom-red font-bold text-3xl md:text-4xl lg:text-5xl">
+            {t("contact-title")}
+          </h2>
+          <p className="font-bold text-custom-white text-lg md:text-xl lg:text-2xl">
+            {t("contact-subtitle")}
+          </p>
+        </div>
 
-        <p className="font-bold text-custom-white sm:text-2xl">
-          {t("contact-subtitle")}
-        </p>
-
-        <div className="grid sm:grid-cols-2 gap-8 w-full">
-          {/* Contact Information (unchanged) */}
-          <div className="flex flex-col gap-4">
-            <h3 className="font-bold text-custom-celeste text-2xl text-left">
+        {/* Main Content Grid */}
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 w-full">
+          {/* Contact Information */}
+          <div className="space-y-6 flex flex-col justify-center">
+            <h3 className="font-bold text-custom-celeste text-xl md:text-2xl">
               {t("contact-info-title")}
             </h3>
-            <ul className="text-custom-white font-semibold text-xl space-y-4">
-              <li className="flex items-center">
-                <AiOutlineMail className="mr-2 text-custom-red" />
-                cisnerosandree2@gmail.com
+            
+            {/* Contact Details */}
+            <ul className="text-custom-white font-semibold space-y-4 text-base md:text-lg">
+              <li className="flex items-center gap-3 hover:text-custom-celeste transition-colors">
+                <AiOutlineMail className="text-custom-red text-xl flex-shrink-0" />
+                <span className="break-all">cisnerosandree2@gmail.com</span>
               </li>
-              <li className="flex items-center">
-                <AiOutlinePhone className="mr-2 text-custom-red" />
-                (+593) 995297859
+              <li className="flex items-center gap-3 hover:text-custom-celeste transition-colors">
+                <AiOutlinePhone className="text-custom-red text-xl flex-shrink-0" />
+                <span>(+593) 995297859</span>
               </li>
-              <li className="flex items-center">
-                <ImLocation2 className="mr-2 text-custom-red" />
-                Quito-Ecuador
+              <li className="flex items-center gap-3 hover:text-custom-celeste transition-colors">
+                <ImLocation2 className="text-custom-red text-xl flex-shrink-0" />
+                <span>Quito-Ecuador</span>
               </li>
             </ul>
 
-            {/* Social Media Links (unchanged) */}
-            <ul className="flex text-custom-red mt-4 gap-8 text-3xl justify-start">
-              <li className="hover:text-custom-celeste transition-colors">
-                <a
-                  href={"https://www.instagram.com/jiwemoyot/"}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaInstagram />
-                </a>
-              </li>
-              <li className="hover:text-custom-celeste transition-colors">
-                <a
-                  href={"https://github.com/Jiwemoyo"}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaGithub />
-                </a>
-              </li>
-              <li className="hover:text-custom-celeste transition-colors">
-                <a
-                  href={"https://www.linkedin.com/in/jiwemoyo/"}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FaLinkedin />
-                </a>
-              </li>
+            {/* Social Media Links */}
+            <ul className="flex gap-6 text-2xl md:text-3xl text-custom-red">
+              {[
+                { icon: <FaInstagram />, link: "https://www.instagram.com/jiwemoyot/" },
+                { icon: <FaGithub />, link: "https://github.com/Jiwemoyo" },
+                { icon: <FaLinkedin />, link: "https://www.linkedin.com/in/jiwemoyo/" }
+              ].map((social, index) => (
+                <li key={index} className="hover:text-custom-celeste transition-colors">
+                  <a
+                    href={social.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    {social.icon}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Contact Form */}
-          <form className="flex flex-col space-y-4 w-full" ref={form} onSubmit={sendEmail}>
+          <form 
+            ref={form} 
+            onSubmit={sendEmail}
+            className="space-y-4 flex flex-col justify-center"
+          >
             <input
               type="text"
               name="user_name" 
               placeholder={t("form-name-placeholder")}
-              className="p-2 bg-custom-white bg-opacity-10 border-4 rounded-md border-custom-celeste text-custom-celeste font-bold placeholder:text-custom-celeste"
+              className="w-full p-3 bg-custom-white bg-opacity-10 border-2 md:border-4 rounded-md border-custom-celeste text-custom-celeste font-bold placeholder:text-custom-celeste focus:outline-none focus:ring-2 focus:ring-custom-red transition-all"
               required
             />
             <input
               type="email"
               name="user_email"
               placeholder={t("form-email-placeholder")}
-              className="p-2 bg-custom-white bg-opacity-10 border-4 rounded-md border-custom-celeste text-custom-celeste font-bold placeholder:text-custom-celeste"
+              className="w-full p-3 bg-custom-white bg-opacity-10 border-2 md:border-4 rounded-md border-custom-celeste text-custom-celeste font-bold placeholder:text-custom-celeste focus:outline-none focus:ring-2 focus:ring-custom-red transition-all"
               required
             />
             <textarea
               name="message" 
               placeholder={t("form-message-placeholder")}
-              className="p-2 bg-custom-white bg-opacity-10 border-4 rounded-md border-custom-celeste text-custom-celeste font-bold placeholder:text-custom-celeste h-32"
+              className="w-full p-3 bg-custom-white bg-opacity-10 border-2 md:border-4 rounded-md border-custom-celeste text-custom-celeste font-bold placeholder:text-custom-celeste h-32 focus:outline-none focus:ring-2 focus:ring-custom-red transition-all resize-none"
               required
             ></textarea>
             <button
               type="submit"
               value="Send"
-              className="bg-custom-red font-bold rounded-lg px-8 py-4 text-white cursor-pointer w-1/2 mx-auto hover:bg-opacity-80 transition-colors"
+              className="bg-custom-red font-bold rounded-lg px-6 py-3 text-white cursor-pointer hover:bg-opacity-80 transition-colors self-center w-full md:w-auto md:min-w-[200px]"
             >
               {t("form-submit-button")}
             </button>
@@ -157,3 +140,5 @@ export const Contact = () => {
     </div>
   );
 };
+
+export default Contact;
