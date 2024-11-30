@@ -4,7 +4,7 @@ export const Home = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="bg-custom-blue flex justify-center items-center w-screen">
+    <div className="bg-custom-blue min-h-screen w-full flex items-center justify-center py-16 px-4 md:px-8">
       <div className="flex flex-col items-center justify-center h-screen gap-5 px-8 text-center sm:items-start sm:gap-11">
         <h1 className=" text-custom-celeste font-bold text-3xl sm:text-9xl">
           {t("greetings")}
