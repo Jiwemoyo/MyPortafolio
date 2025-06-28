@@ -13,7 +13,7 @@ export const About = () => {
       <div className="max-w-6xl w-full h-full min-h-[80vh] grid grid-cols-1 lg:grid-cols-2 lg:grid-rows-3 gap-8 items-stretch relative z-10">
         {/* div1: Avatar y saludo, ocupa ambas columnas en la primera fila */}
         <div className="flex flex-col items-center justify-center gap-4 w-full h-full lg:col-span-2 lg:row-start-1">
-          <img src="/vite.svg" alt="Avatar" className="w-40 h-40 lg:w-56 lg:h-56 rounded-full border-4 border-custom-celeste shadow-lg bg-white object-cover mx-auto" />
+          <img src="profile.jpg" alt="Avatar" className="w-40 h-40 lg:w-56 lg:h-56 rounded-full border-4 border-custom-celeste shadow-lg bg-white object-cover mx-auto" />
           <h2 className="text-custom-celeste text-3xl lg:text-5xl font-extrabold animate-bounce text-center">{t("about-hi", { defaultValue: "¡Hola! Soy Alessandro 👋" })}</h2>
           <span className="text-custom-white text-lg lg:text-2xl italic mt-1 text-center max-w-xs lg:max-w-md">{t("about-catch", { defaultValue: "¡Listo para crear experiencias digitales memorables contigo!" })}</span>
         </div>
