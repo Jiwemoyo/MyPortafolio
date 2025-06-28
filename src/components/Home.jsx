@@ -6,13 +6,14 @@ export const Home = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="bg-custom-blue min-h-screen w-full flex items-center justify-center py-16 px-4 md:px-8">
-      <div className="absolute bottom-0 right-[20%] pointer-events-none z-10">
+    <div className="bg-custom-blue min-h-screen w-full flex items-center justify-center py-16 px-4 md:px-8 relative">
+      <div className="fixed bottom-0 right-0 sm:right-10 md:right-32 pointer-events-none z-0 opacity-80 select-none">
         <DotLottieReact
           src="https://lottie.host/6c6fbdb7-72ac-49a2-b011-938800ae7ff6/2Nzn4a4tsV.lottie"
           autoplay
           hover
-          style={{ width: '500px', height: '500px',}} // Ajusta el tamaño y opacidad según prefieras
+          style={{ }}
+          className="w-40 h-40 sm:w-72 sm:h-72 md:w-[400px] md:h-[400px] lg:w-[500px] lg:h-[500px]"
         />
       </div>
 

@@ -17,17 +17,12 @@ export const Projects = () => {
         </p>
       </div>
 
-      {/* Bento Grid con masonry style */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto auto-rows-[300px]">
-        {dataProject.map((project, index) => (
+      {/* Bento Grid ordenado y uniforme */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 max-w-7xl mx-auto auto-rows-[350px]">
+        {dataProject.map((project) => (
           <div 
-            key={project.id} 
-            className={`
-              ${index === 0 ? 'md:col-span-2 md:row-span-2 h-full' : ''} 
-              ${index === 3 ? 'lg:col-span-2' : ''}
-              ${index === dataProject.length - 1 ? 'md:col-span-2 lg:col-span-1' : ''}
-              transform transition-all duration-500 hover:z-10
-            `}
+            key={project.id}
+            className="rounded-2xl shadow-xl bg-custom-celeste/10 h-full w-full min-h-[320px] max-h-[400px] flex flex-col items-stretch justify-between transform transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:z-10"
           >
             <ProjectsCard data={project} />
           </div>

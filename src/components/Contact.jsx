@@ -10,6 +10,13 @@ export const Contact = () => {
   const form = useRef();
   const [alert, setAlert] = useState(null);
 
+  // Definir el array de redes sociales fuera del JSX
+  const socialLinks = [
+    { icon: <FaInstagram />, link: "https://www.instagram.com/jiwemoyot/" },
+    { icon: <FaGithub />, link: "https://github.com/Jiwemoyo" },
+    { icon: <FaLinkedin />, link: "https://www.linkedin.com/in/jiwemoyo/" }
+  ];
+
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs
@@ -30,7 +37,12 @@ export const Contact = () => {
   };
 
   return (
-    <div className="bg-custom-blue min-h-screen w-full flex items-center justify-center px-4 md:px-8">
+    <div className="bg-custom-blue min-h-screen w-full flex items-center justify-center px-4 md:px-8 relative overflow-hidden">
+      {/* Fondo decorativo sutil */}
+      <div className="hidden md:block absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute -top-20 -left-20 w-96 h-96 bg-custom-celeste/20 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-custom-red/20 rounded-full blur-2xl animate-pulse" />
+      </div>
       {/* Alert Component */}
       {alert && (
         <div 
@@ -45,9 +57,12 @@ export const Contact = () => {
         </div>
       )}
 
-      <div className="max-w-5xl w-full py-8 space-y-8">
+      <div className="max-w-5xl w-full py-8 space-y-8 z-10">
         {/* Header Section */}
-        <div className="space-y-4 text-center">
+        <div className="space-y-4 text-center flex flex-col items-center">
+          <span className="inline-block bg-custom-celeste/30 rounded-full p-4 mb-2 animate-bounce shadow-lg">
+            <AiOutlineMail className="text-custom-red text-4xl" />
+          </span>
           <h2 className="text-custom-red font-bold text-3xl md:text-4xl lg:text-5xl">
             {t("contact-title")}
           </h2>
@@ -59,11 +74,10 @@ export const Contact = () => {
         {/* Main Content Grid */}
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12 w-full">
           {/* Contact Information */}
-          <div className="space-y-6 flex flex-col justify-center">
+          <div className="space-y-6 flex flex-col justify-center bg-custom-celeste/10 rounded-2xl shadow-xl p-6 md:p-8 backdrop-blur-sm">
             <h3 className="font-bold text-custom-celeste text-xl md:text-2xl">
               {t("contact-info-title")}
             </h3>
-            
             {/* Contact Details */}
             <ul className="text-custom-white font-semibold space-y-4 text-base md:text-lg">
               <li className="flex items-center gap-3 hover:text-custom-celeste transition-colors">
@@ -79,14 +93,9 @@ export const Contact = () => {
                 <span>Quito-Ecuador</span>
               </li>
             </ul>
-
             {/* Social Media Links */}
             <ul className="flex gap-6 text-2xl md:text-3xl text-custom-red">
-              {[
-                { icon: <FaInstagram />, link: "https://www.instagram.com/jiwemoyot/" },
-                { icon: <FaGithub />, link: "https://github.com/Jiwemoyo" },
-                { icon: <FaLinkedin />, link: "https://www.linkedin.com/in/jiwemoyo/" }
-              ].map((social, index) => (
+              {socialLinks.map((social, index) => (
                 <li key={index} className="hover:text-custom-celeste transition-colors">
                   <a
                     href={social.link}
@@ -105,7 +114,7 @@ export const Contact = () => {
           <form 
             ref={form} 
             onSubmit={sendEmail}
-            className="space-y-4 flex flex-col justify-center"
+            className="space-y-4 flex flex-col justify-center bg-custom-celeste/10 rounded-2xl shadow-xl p-6 md:p-8 backdrop-blur-sm"
           >
             <input
               type="text"
@@ -130,7 +139,7 @@ export const Contact = () => {
             <button
               type="submit"
               value="Send"
-              className="bg-custom-red font-bold rounded-lg px-6 py-3 text-white cursor-pointer hover:bg-opacity-80 transition-colors self-center w-full md:w-auto md:min-w-[200px]"
+              className="bg-custom-red font-bold rounded-lg px-6 py-3 text-white cursor-pointer hover:bg-opacity-80 transition-colors self-center w-full md:w-auto md:min-w-[200px] shadow-lg hover:scale-105"
             >
               {t("form-submit-button")}
             </button>

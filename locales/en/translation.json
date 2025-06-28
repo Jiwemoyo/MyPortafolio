@@ -28,5 +28,7 @@
   "form-name-placeholder":"Name",
   "form-email-placeholder":"Email",
   "form-message-placeholder":"Message",
-  "form-submit-button":"Send Message"
+  "form-submit-button":"Send Message",
+  "about-hi": "Hi! I'm Alessandro 👋",
+  "about-catch": "Ready to create memorable digital experiences with you!"
 }
