@@ -1,0 +1,34 @@
+{
+  "greetings": "Hola, Soy Alessandro",
+  "profetion": "Desarrollador Web & Disenador",
+  "presentation": "Bienvenido a mi universo digital donde la tecnologia y creatividad se juntan",
+  "skills-home": {
+    "wD": "Maquetador Web",
+    "3D": "Diseno y modelado 3D",
+    "DS": "Desarrollador de Software"
+  },
+  "button-Contact": "Cantactame",
+  "button-Projects": "Proyectos",
+  "about-presentation": "Soy un apasionado desarrollador web con un ojo para el diseño y una mente para la lógica. Con experiencia en crear aplicaciones web dinámicas y atractivas, me esfuerzo por combinar funcionalidad con estética para ofrecer experiencias de usuario excepcionales.",
+  "carer-path":"Mi trayectoria",
+  "dates-about":{
+    "date1":"Diseñador en Tienda de Uniformes Deportivos",
+    "date2":"Desarrollador Front-end en Linkeart",
+    "date3":"Asistente DevOps en KFC"
+  },
+  "skills":"Habilidades",
+  "Philosophy":"Mi Filosofía",
+  "Philosophy-context":"Creo en la fusión de la tecnología y la creatividad para resolver problemas y crear experiencias digitales memorables. Mi objetivo es seguir aprendiendo y creciendo en este campo en constante evolución, mientras contribuyo a proyectos que tengan un impacto positivo en el mundo.",
+  "Proyects-title":"Mis proyectos",
+  "Proyects-presentation":"Aquí hay una selección de proyectos en los que he trabajado. Cada uno demuestra diferentes habilidades y tecnologías.",
+  "VP":"Ver Proyecto",
+  "contact-title":"Contáctame",
+  "contact-subtitle":"¿Tienes alguna pregunta o propuesta? No dudes en contactarme. Estaré encantado de escucharte.",
+  "contact-info-title":"Información de Contacto",
+  "form-name-placeholder":"Nombre",
+  "form-email-placeholder":"Email",
+  "form-message-placeholder":"Mensaje",
+  "form-submit-button":"Enviar Mensaje",
+  "about-hi": "¡Hola! Soy Alessandro 👋",
+  "about-catch": "¡Listo para crear experiencias digitales memorables contigo!"
+}

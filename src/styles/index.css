@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  background: #0a0a0a;
+  color: #f0f0f0;
+  font-family: 'Orbitron', monospace;
+}
+
+/* Estilos base cyber */
+@layer components {
+  .cyber-border {
+    @apply border border-cyber-cyan;
+    box-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+  }
+
+  .cyber-border-active {
+    @apply border border-cyber-magenta;
+    box-shadow: 0 0 15px rgba(255, 0, 110, 0.7), 0 0 30px rgba(0, 217, 255, 0.3);
+  }
+
+  .glow-text {
+    @apply text-cyber-cyan;
+    text-shadow: 0 0 10px #00d9ff, 0 0 20px #00d9ff;
+  }
+
+  .glow-text-magenta {
+    @apply text-cyber-magenta;
+    text-shadow: 0 0 10px #ff006e, 0 0 20px #ff006e;
+  }
+
+  .btn-cyber {
+    @apply px-4 py-2 border-2 border-cyber-cyan text-cyber-cyan font-bold transition-all duration-300;
+    text-shadow: 0 0 10px rgba(0, 217, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .btn-cyber::before {
+    @apply absolute top-0 left-0 w-full h-full bg-cyber-cyan;
+    content: '';
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: -1;
+  }
+
+  .btn-cyber:hover {
+    @apply text-cyber-black shadow-none;
+    box-shadow: 0 0 20px #00d9ff, inset 0 0 20px rgba(0, 217, 255, 0.2);
+  }
+
+  .btn-cyber:hover::before {
+    transform: translateX(0);
+  }
+
+  .geometric-line {
+    @apply absolute;
+    background: linear-gradient(90deg, transparent, #00d9ff, transparent);
+    height: 2px;
+    animation: lineMove 3s ease-in-out infinite;
+  }
+
+  .triangle-accent {
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 35px solid #00d9ff;
+    filter: drop-shadow(0 0 10px #00d9ff);
+  }
+
+  .scan-effect {
+    animation: scan 4s ease-in-out infinite;
+  }
+
+  .grid-bg {
+    background-image: 
+      linear-gradient(0deg, transparent 24%, rgba(0, 217, 255, 0.05) 25%, rgba(0, 217, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 217, 255, 0.05) 75%, rgba(0, 217, 255, 0.05) 76%, transparent 77%, transparent),
+      linear-gradient(90deg, transparent 24%, rgba(0, 217, 255, 0.05) 25%, rgba(0, 217, 255, 0.05) 26%, transparent 27%, transparent 74%, rgba(0, 217, 255, 0.05) 75%, rgba(0, 217, 255, 0.05) 76%, transparent 77%, transparent);
+    background-size: 50px 50px;
+  }
+
+  .fondo {
+    @apply bg-cyber-black flex justify-center items-center w-full h-full
+  }
+}

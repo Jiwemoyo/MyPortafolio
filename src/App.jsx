@@ -1,8 +1,5 @@
-import { About } from "./components/About";
-import { Contact } from "./components/Contact";
-import { Home } from "./components/Home";
-import { Projects } from "./components/Projects";
-import { SideBar } from "./components/SideBar";
+import { About, Contact, Home, Projects } from "./pages";
+import { SideBar } from "./components/layout";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -47,10 +44,14 @@ function App() {
   const location = useLocation();
 
   return (
-    <div className="flex flex-col-reverse sm:flex sm:flex-row bg-custom-blue">
+    <div className="flex flex-col-reverse sm:flex-row bg-cyber-black min-h-screen grid-bg">
       <SideBar />
-      <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
+      <main className="flex-1 w-full overflow-y-auto relative">
+        {/* Línea decorativa superior */}
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-cyber-cyan to-transparent"></div>
+        
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
           <Route
             path="/"
             element={
@@ -83,8 +84,9 @@ function App() {
               </AnimatedPage>
             }
           />
-        </Routes>
-      </AnimatePresence>
+          </Routes>
+        </AnimatePresence>
+      </main>
     </div>
   );
 }
