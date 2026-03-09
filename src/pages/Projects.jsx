@@ -6,28 +6,30 @@ import { useTranslation } from "react-i18next";
 export const Projects = () => {
   const { t } = useTranslation();
   return (
-    <div className="bg-theme-bg min-h-screen px-4 py-12 md:px-8 w-full relative overflow-hidden">
-      {/* Decoración */}
-      <div className="absolute top-10 right-10 w-40 h-40 border-2 border-theme-secondary opacity-10 transform rotate-45 rounded-xl"></div>
+    <div className="min-h-[calc(100vh-4rem)] p-4 lg:p-8 w-full relative">
 
-      {/* Header */}
-      <div className="text-center max-w-4xl mx-auto mb-16">
-        <div className="inline-block mb-4 px-4 py-1.5 bg-theme-primary/10 rounded-full">
-          <span className="primary-text text-sm font-bold tracking-wider">PORTFOLIO</span>
+      {/* Header Poster Block */}
+      <div className="brutal-box bg-white p-6 md:p-10 mb-8 border-4 border-ik-dark relative overflow-hidden group">
+        <div className="absolute top-0 right-0 w-32 h-32 bg-ik-dark opacity-5 rounded-bl-[100px] pointer-events-none"></div>
+        <div className="inline-block bg-ik-dark text-ik-light font-pixel text-xl px-4 py-1 mb-4">
+          DATABASE: ACTIVE
         </div>
-        <h2 className="text-theme-text text-4xl md:text-6xl font-black mb-6 tracking-tight">
+        <h2 className="text-ik-dark font-display uppercase text-5xl md:text-7xl mb-4 tracking-tighter mix-blend-multiply">
           {t('Proyects-title')}
         </h2>
-        <p className="text-theme-muted text-base md:text-lg max-w-2xl mx-auto px-4">
+        <div className="bg-ik-accent w-16 h-2 mb-6"></div>
+        <p className="font-pixel text-xl md:text-2xl text-ik-dark leading-relaxed max-w-3xl">
           {t('Proyects-presentation')}
         </p>
       </div>
 
-      {/* Projects Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto auto-rows-[300px] md:auto-rows-[350px]">
-        {PROJECTS_DATA.map((project) => (
-          <ProjectsCard key={project.id} data={project} />
-        ))}
+      {/* Projects Grid Container */}
+      <div className="brutal-box bg-ik-teal p-4 md:p-8 border-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 auto-rows-[400px]">
+          {PROJECTS_DATA.map((project, index) => (
+            <ProjectsCard key={project.id} data={project} index={index + 1} />
+          ))}
+        </div>
       </div>
     </div>
   );

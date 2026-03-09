@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=VT323&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -8,44 +8,46 @@
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
 }
 
 body {
-  background: #f8fafc;
-  color: #0f172a;
+  background: #00a896;
+  color: #111111;
   font-family: 'Inter', sans-serif;
+  cursor: crosshair;
 }
 
 @layer components {
-  .minimal-border {
-    @apply border border-gray-200 rounded-lg shadow-sm bg-white;
+
+  /* ZZZ Halftone Background Effect */
+  .halftone-bg {
+    background-color: #00a896;
+    background-image: radial-gradient(#111111 2px, transparent 2px);
+    background-size: 16px 16px;
   }
 
-  .minimal-border-active {
-    @apply border border-theme-primary rounded-lg shadow-md bg-white;
+  .brutal-box {
+    @apply border-4 border-ik-dark bg-ik-light shadow-brutal;
+  }
+
+  .brutal-box-active {
+    @apply border-4 border-ik-dark bg-ik-accent text-white shadow-brutal;
+  }
+
+  .brutal-btn {
+    @apply px-6 py-2 border-4 border-ik-dark bg-ik-light font-display uppercase shadow-brutal hover:shadow-brutal-active hover:translate-x-1 hover:translate-y-1 transition-all duration-200 active:shadow-none active:translate-x-2 active:translate-y-2;
   }
 
   .primary-text {
-    @apply text-theme-primary font-bold;
+    @apply text-ik-dark font-display uppercase tracking-tight;
   }
 
-  .secondary-text {
-    @apply text-theme-secondary font-bold;
-  }
-
-  .btn-primary {
-    @apply px-6 py-2 bg-theme-primary text-white font-medium rounded-lg shadow-sm hover:shadow-md hover:bg-sky-600 transition-all duration-300;
-  }
-
-  .btn-outline {
-    @apply px-6 py-2 border border-theme-primary text-theme-primary font-medium rounded-lg bg-transparent hover:bg-sky-50 transition-all duration-300;
-  }
-
-  .fondo {
-    @apply bg-theme-bg flex justify-center items-center w-full h-full;
+  .pixel-text {
+    @apply text-ik-dark font-pixel text-xl tracking-widest;
   }
 }

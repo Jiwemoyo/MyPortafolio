@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 
-export const ProjectsCard = ({ data }) => {
+export const ProjectsCard = ({ data, index }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -11,50 +11,54 @@ export const ProjectsCard = ({ data }) => {
       rel="noopener noreferrer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className="group relative w-full h-full bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 flex flex-col"
+      className="brutal-box bg-white flex flex-col group hover:shadow-brutal-active hover:translate-x-1 hover:translate-y-1 transition-all duration-200 cursor-crosshair overflow-hidden relative"
     >
-      {/* Image */}
-      <div className="w-full h-48 overflow-hidden relative">
+      {/* Etiqueta de Número (Estilo Inter-Knot Poster) */}
+      <div className="absolute top-0 left-0 bg-ik-dark text-ik-light font-display text-2xl px-3 py-1 z-20">
+        {index < 10 ? `0${index}` : index}
+      </div>
+
+      {/* Image Block */}
+      <div className="w-full h-48 border-b-4 border-ik-dark overflow-hidden relative bg-ik-dark">
         <img
           src={data.img}
           alt={data.titulo}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter sepia-[0.3] hover:sepia-0"
         />
-        <div className={`absolute inset-0 bg-black/20 transition-opacity duration-300 ${isHovered ? 'opacity-0' : 'opacity-100'}`}></div>
+        {/* Halftone Overlay on Hover */}
+        <div className={`absolute inset-0 halftone-bg mix-blend-multiply opacity-50 transition-opacity duration-300 ${isHovered ? 'opacity-0' : 'opacity-100'}`}></div>
       </div>
 
-      {/* Content */}
-      <div className="flex-1 flex flex-col p-5 md:p-6 bg-white z-10">
-        {/* Title */}
-        <h3 className="text-theme-text text-lg md:text-xl font-bold mb-2">
+      {/* Content Block */}
+      <div className="flex-1 flex flex-col p-5 bg-white z-10">
+        <h3 className="text-ik-dark font-display text-xl uppercase mb-2 border-b-2 border-ik-dark pb-2">
           {data.titulo}
         </h3>
 
-        {/* Description */}
-        <p className="text-theme-muted text-sm mb-4 line-clamp-2 md:line-clamp-3 flex-1">
+        <p className="font-pixel text-ik-dark text-lg mb-4 line-clamp-3 flex-1 leading-tight">
           {data.Description}
         </p>
 
-        {/* Technologies */}
+        {/* Technologies - Pixel Tags */}
         <div className="flex flex-wrap gap-2 mb-4">
           {data.Tecnologies.slice(0, 3).map((tech, idx) => (
             <span
               key={idx}
-              className="text-theme-secondary bg-theme-secondary/10 text-xs px-2.5 py-1 rounded-full font-medium"
+              className="bg-ik-dark text-ik-light font-pixel text-sm px-2 py-0.5"
             >
-              {tech}
+              [{tech}]
             </span>
           ))}
           {data.Tecnologies.length > 3 && (
-            <span className="text-gray-500 bg-gray-100 text-xs px-2.5 py-1 rounded-full font-medium">
+            <span className="bg-ik-accent text-white font-pixel text-sm px-2 py-0.5">
               +{data.Tecnologies.length - 3}
             </span>
           )}
         </div>
 
-        {/* Button */}
-        <div className="text-theme-primary text-sm font-semibold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-          View Project &rarr;
+        {/* Action Fake Button */}
+        <div className="w-full bg-ik-teal border-2 border-ik-dark text-ik-dark font-pixel text-xl text-center py-1 mt-auto group-hover:bg-ik-accent group-hover:text-white transition-colors">
+          ACCESS_DATA &gt;
         </div>
       </div>
     </a>

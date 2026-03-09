@@ -44,11 +44,11 @@ function App() {
   const location = useLocation();
 
   return (
-    <div className="flex flex-col-reverse sm:flex-row bg-theme-bg min-h-screen">
+    <div className="flex flex-col-reverse sm:flex-row bg-ik-teal halftone-bg h-screen w-full overflow-hidden">
       <SideBar />
-      <main className="flex-1 w-full overflow-y-auto relative">
-        {/* Línea decorativa superior */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-theme-primary to-transparent"></div>
+      <main className="flex-1 w-full h-full overflow-y-auto relative p-4 lg:p-8">
+        {/* Borde interior brutalista */}
+        <div className="absolute inset-4 lg:inset-8 border-4 border-ik-dark pointer-events-none z-0 mix-blend-overlay opacity-30"></div>
 
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
