@@ -6,19 +6,19 @@ import { useTranslation } from "react-i18next";
 export const Projects = () => {
   const { t } = useTranslation();
   return (
-    <div className="bg-cyber-black min-h-screen px-4 py-12 md:px-8 w-full grid-bg relative overflow-hidden">
+    <div className="bg-theme-bg min-h-screen px-4 py-12 md:px-8 w-full relative overflow-hidden">
       {/* Decoración */}
-      <div className="absolute top-10 right-10 w-40 h-40 border-2 border-cyber-magenta opacity-10 transform rotate-45"></div>
+      <div className="absolute top-10 right-10 w-40 h-40 border-2 border-theme-secondary opacity-10 transform rotate-45 rounded-xl"></div>
 
       {/* Header */}
       <div className="text-center max-w-4xl mx-auto mb-16">
-        <div className="inline-block mb-4 px-4 py-2 border-2 border-cyber-cyan">
-          <span className="glow-text font-bold">&gt; PROYECTOS</span>
+        <div className="inline-block mb-4 px-4 py-1.5 bg-theme-primary/10 rounded-full">
+          <span className="primary-text text-sm font-bold tracking-wider">PORTFOLIO</span>
         </div>
-        <h2 className="glow-text text-4xl md:text-6xl font-black mb-6 tracking-wider">
+        <h2 className="text-theme-text text-4xl md:text-6xl font-black mb-6 tracking-tight">
           {t('Proyects-title')}
         </h2>
-        <p className="text-cyber-white text-base md:text-lg px-4 border-l-4 border-cyber-magenta pl-4">
+        <p className="text-theme-muted text-base md:text-lg max-w-2xl mx-auto px-4">
           {t('Proyects-presentation')}
         </p>
       </div>

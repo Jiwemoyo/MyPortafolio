@@ -36,23 +36,22 @@ export const Contact = () => {
   };
 
   return (
-    <div className="bg-cyber-black min-h-screen w-full flex items-center justify-center px-4 py-20 md:px-8 relative overflow-hidden grid-bg">
+    <div className="bg-theme-bg min-h-screen w-full flex items-center justify-center px-4 py-20 md:px-8 relative overflow-hidden">
       {/* Decoración */}
-      <div className="absolute top-20 left-10 w-px h-96 bg-gradient-to-b from-cyber-cyan to-transparent opacity-20"></div>
-      <div className="absolute bottom-20 right-10 w-px h-96 bg-gradient-to-t from-cyber-magenta to-transparent opacity-20"></div>
+      <div className="absolute top-20 left-10 w-px h-96 bg-gradient-to-b from-theme-primary to-transparent opacity-20"></div>
+      <div className="absolute bottom-20 right-10 w-px h-96 bg-gradient-to-t from-theme-secondary to-transparent opacity-20"></div>
 
       {/* Alert */}
       {alert && (
-        <div 
-          className={`fixed top-4 right-4 z-50 px-4 py-2 border-2 text-sm md:text-base font-bold ${
-            alert === 'success' 
-              ? 'border-cyber-cyan text-cyber-cyan bg-cyber-dark' 
-              : 'border-cyber-magenta text-cyber-magenta bg-cyber-dark'
-          }`}
+        <div
+          className={`fixed top-4 right-4 z-50 px-4 py-3 rounded-lg border text-sm md:text-base font-bold shadow-lg ${alert === 'success'
+              ? 'border-green-200 text-green-700 bg-green-50'
+              : 'border-red-200 text-red-700 bg-red-50'
+            }`}
         >
-          {alert === 'success' 
-            ? '[✓] ' + t("email-success-message") 
-            : '[✗] ' + t("email-error-message")
+          {alert === 'success'
+            ? '✓ ' + t("email-success-message")
+            : '✗ ' + t("email-error-message")
           }
         </div>
       )}
@@ -60,13 +59,13 @@ export const Contact = () => {
       <div className="max-w-5xl w-full space-y-8 z-10">
         {/* Header */}
         <div className="text-center space-y-4">
-          <div className="inline-block px-4 py-2 border-2 border-cyber-magenta mb-4">
-            <span className="glow-text-magenta font-bold">&gt; CONTACTO</span>
+          <div className="inline-block px-4 py-1.5 bg-theme-primary/10 rounded-full mb-4">
+            <span className="primary-text text-sm font-bold tracking-wider">CONTACTO</span>
           </div>
-          <h2 className="glow-text text-4xl md:text-6xl font-black tracking-wider">
+          <h2 className="text-theme-text text-4xl md:text-6xl font-black tracking-tight">
             {t("contact-title")}
           </h2>
-          <p className="text-cyber-white text-sm md:text-lg max-w-2xl mx-auto">
+          <p className="text-theme-muted text-sm md:text-lg max-w-2xl mx-auto">
             {t("contact-subtitle")}
           </p>
         </div>
@@ -74,36 +73,42 @@ export const Contact = () => {
         {/* Content Grid */}
         <div className="grid md:grid-cols-2 gap-8">
           {/* Contact Info */}
-          <div className="cyber-border p-6 md:p-8 bg-cyber-dark/50 backdrop-blur space-y-6">
-            <div className="text-cyber-cyan font-bold text-lg">[ INFORMACIÓN ]</div>
-            
+          <div className="minimal-border p-6 md:p-8 space-y-6">
+            <div className="text-theme-primary font-bold text-lg">Información</div>
+
             <div className="space-y-4">
-              <div className="flex items-start gap-3 pb-3 border-b border-cyber-gray">
-                <AiOutlineMail className="text-cyber-magenta text-xl flex-shrink-0 mt-1" />
+              <div className="flex items-start gap-4 pb-4 border-b border-gray-100">
+                <div className="w-10 h-10 rounded-full bg-theme-primary/10 flex items-center justify-center flex-shrink-0">
+                  <AiOutlineMail className="text-theme-primary text-xl" />
+                </div>
                 <div>
-                  <div className="text-cyber-cyan text-xs font-bold">EMAIL</div>
-                  <div className="text-cyber-white break-all">cisnerosandree2@gmail.com</div>
+                  <div className="text-gray-500 text-xs font-bold mb-1">EMAIL</div>
+                  <div className="text-theme-text font-medium break-all">cisnerosandree2@gmail.com</div>
                 </div>
               </div>
-              <div className="flex items-start gap-3 pb-3 border-b border-cyber-gray">
-                <AiOutlinePhone className="text-cyber-magenta text-xl flex-shrink-0 mt-1" />
+              <div className="flex items-start gap-4 pb-4 border-b border-gray-100">
+                <div className="w-10 h-10 rounded-full bg-theme-primary/10 flex items-center justify-center flex-shrink-0">
+                  <AiOutlinePhone className="text-theme-primary text-xl" />
+                </div>
                 <div>
-                  <div className="text-cyber-cyan text-xs font-bold">TELÉFONO</div>
-                  <div className="text-cyber-white">(+593) 995297859</div>
+                  <div className="text-gray-500 text-xs font-bold mb-1">TELÉFONO</div>
+                  <div className="text-theme-text font-medium">(+593) 995297859</div>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <ImLocation2 className="text-cyber-magenta text-xl flex-shrink-0 mt-1" />
+              <div className="flex items-start gap-4">
+                <div className="w-10 h-10 rounded-full bg-theme-primary/10 flex items-center justify-center flex-shrink-0">
+                  <ImLocation2 className="text-theme-primary text-xl" />
+                </div>
                 <div>
-                  <div className="text-cyber-cyan text-xs font-bold">UBICACIÓN</div>
-                  <div className="text-cyber-white">Quito, Ecuador</div>
+                  <div className="text-gray-500 text-xs font-bold mb-1">UBICACIÓN</div>
+                  <div className="text-theme-text font-medium">Quito, Ecuador</div>
                 </div>
               </div>
             </div>
 
             {/* Social Links */}
-            <div className="border-t border-cyber-gray pt-6">
-              <div className="text-cyber-cyan font-bold text-xs mb-4">[ REDES SOCIALES ]</div>
+            <div className="border-t border-gray-100 pt-6">
+              <div className="text-gray-500 font-bold text-xs mb-4">REDES SOCIALES</div>
               <div className="flex gap-4">
                 {socialLinks.map((social, idx) => (
                   <a
@@ -111,7 +116,7 @@ export const Contact = () => {
                     href={social.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 border-2 border-cyber-cyan text-cyber-cyan flex items-center justify-center hover:bg-cyber-cyan hover:text-cyber-black transition-all"
+                    className="w-10 h-10 rounded-full bg-gray-50 text-gray-600 flex items-center justify-center hover:bg-theme-primary hover:text-white transition-all shadow-sm"
                   >
                     {social.icon}
                   </a>
@@ -121,35 +126,35 @@ export const Contact = () => {
           </div>
 
           {/* Contact Form */}
-          <form 
-            ref={form} 
+          <form
+            ref={form}
             onSubmit={sendEmail}
-            className="cyber-border p-6 md:p-8 bg-cyber-dark/50 backdrop-blur space-y-4"
+            className="minimal-border p-6 md:p-8 space-y-5"
           >
-            <div className="text-cyber-magenta font-bold text-lg">[ FORMULARIO ]</div>
+            <div className="text-theme-primary font-bold text-lg">Envíame un mensaje</div>
 
             <input
               type="text"
-              name="user_name" 
+              name="user_name"
               placeholder={t("form-name-placeholder")}
-              className="w-full p-3 bg-cyber-dark border-2 border-cyber-cyan text-cyber-cyan placeholder:text-cyber-gray font-bold focus:outline-none focus:border-cyber-magenta focus:box-shadow-none transition-colors"
+              className="w-full p-3.5 bg-gray-50 border border-gray-200 rounded-lg text-theme-text placeholder:text-gray-400 focus:outline-none focus:border-theme-primary focus:ring-2 focus:ring-theme-primary/20 transition-all font-medium"
               required
             />
             <input
               type="email"
               name="user_email"
               placeholder={t("form-email-placeholder")}
-              className="w-full p-3 bg-cyber-dark border-2 border-cyber-cyan text-cyber-cyan placeholder:text-cyber-gray font-bold focus:outline-none focus:border-cyber-magenta transition-colors"
+              className="w-full p-3.5 bg-gray-50 border border-gray-200 rounded-lg text-theme-text placeholder:text-gray-400 focus:outline-none focus:border-theme-primary focus:ring-2 focus:ring-theme-primary/20 transition-all font-medium"
               required
             />
             <textarea
-              name="message" 
+              name="message"
               placeholder={t("form-message-placeholder")}
-              className="w-full p-3 bg-cyber-dark border-2 border-cyber-cyan text-cyber-cyan placeholder:text-cyber-gray font-bold h-24 md:h-28 focus:outline-none focus:border-cyber-magenta transition-colors resize-none"
+              className="w-full p-3.5 bg-gray-50 border border-gray-200 rounded-lg text-theme-text placeholder:text-gray-400 h-32 focus:outline-none focus:border-theme-primary focus:ring-2 focus:ring-theme-primary/20 transition-all font-medium resize-none"
               required
             ></textarea>
-            <button type="submit" className="btn-cyber w-full">
-              &gt;_ {t("form-submit-button")} &lt;
+            <button type="submit" className="btn-primary w-full py-3.5 text-base">
+              {t("form-submit-button")}
             </button>
           </form>
         </div>

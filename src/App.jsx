@@ -44,46 +44,46 @@ function App() {
   const location = useLocation();
 
   return (
-    <div className="flex flex-col-reverse sm:flex-row bg-cyber-black min-h-screen grid-bg">
+    <div className="flex flex-col-reverse sm:flex-row bg-theme-bg min-h-screen">
       <SideBar />
       <main className="flex-1 w-full overflow-y-auto relative">
         {/* Línea decorativa superior */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-cyber-cyan to-transparent"></div>
-        
+        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-theme-primary to-transparent"></div>
+
         <AnimatePresence mode="wait">
           <Routes location={location} key={location.pathname}>
-          <Route
-            path="/"
-            element={
-              <AnimatedPage>
-                <Home />
-              </AnimatedPage>
-            }
-          />
-          <Route
-            path="/about"
-            element={
-              <AnimatedPage>
-                <About />
-              </AnimatedPage>
-            }
-          />
-          <Route
-            path="/projects"
-            element={
-              <AnimatedPage>
-                <Projects />
-              </AnimatedPage>
-            }
-          />
-          <Route
-            path="/contact"
-            element={
-              <AnimatedPage>
-                <Contact />
-              </AnimatedPage>
-            }
-          />
+            <Route
+              path="/"
+              element={
+                <AnimatedPage>
+                  <Home />
+                </AnimatedPage>
+              }
+            />
+            <Route
+              path="/about"
+              element={
+                <AnimatedPage>
+                  <About />
+                </AnimatedPage>
+              }
+            />
+            <Route
+              path="/projects"
+              element={
+                <AnimatedPage>
+                  <Projects />
+                </AnimatedPage>
+              }
+            />
+            <Route
+              path="/contact"
+              element={
+                <AnimatedPage>
+                  <Contact />
+                </AnimatedPage>
+              }
+            />
           </Routes>
         </AnimatePresence>
       </main>

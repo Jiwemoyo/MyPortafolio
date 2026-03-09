@@ -40,15 +40,15 @@ export const SideBar = () => {
   const activeNav = getActiveKey();
 
   return (
-    <aside className="hidden sm:flex sticky top-0 h-screen flex-col items-center justify-between bg-cyber-black border-r-2 border-cyber-cyan/30 py-8 px-4 gap-12 z-40">
+    <aside className="hidden sm:flex sticky top-0 h-screen flex-col items-center justify-between bg-white border-r border-gray-200 py-8 px-4 gap-12 z-40 shadow-sm">
       {/* Logo/Brand */}
       <div className="flex-shrink-0">
         <button
           onClick={() => navigate('/')}
           className="block cursor-pointer"
         >
-          <div className="w-14 h-14 rounded-full border-2 border-cyber-cyan flex items-center justify-center hover:shadow-[0_0_15px_rgba(0,217,255,0.5)] transition-all">
-            <span className="text-2xl font-black text-cyber-cyan">A</span>
+          <div className="w-14 h-14 rounded-full bg-theme-primary text-white flex items-center justify-center hover:bg-sky-600 shadow-md transition-all">
+            <span className="text-2xl font-black">A</span>
           </div>
         </button>
       </div>
@@ -61,14 +61,13 @@ export const SideBar = () => {
             onClick={() => navigate(path)}
             onMouseEnter={() => setHoveredIcon(key)}
             onMouseLeave={() => setHoveredIcon(null)}
-            className={`flex items-center justify-center w-12 h-12 rounded-lg border-2 transition-all duration-300 cursor-pointer relative group ${
-              activeNav === key 
-                ? 'border-cyber-magenta bg-cyber-magenta/20 text-cyber-magenta shadow-[0_0_15px_rgba(255,0,110,0.5)]'
-                : 'border-cyber-cyan text-cyber-cyan hover:border-cyber-magenta hover:text-cyber-magenta hover:shadow-[0_0_15px_rgba(0,217,255,0.5)]'
-            }`}
+            className={`flex items-center justify-center w-12 h-12 rounded-lg transition-all duration-300 cursor-pointer relative group ${activeNav === key
+                ? 'bg-theme-primary text-white shadow-md'
+                : 'bg-gray-50 text-gray-400 hover:bg-theme-primary/10 hover:text-theme-primary'
+              }`}
           >
             <Icon className="text-2xl" />
-            <span className="absolute left-full ml-3 px-3 py-1 bg-cyber-dark border-2 border-cyber-cyan text-cyber-cyan text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+            <span className="absolute left-full ml-3 px-3 py-1 bg-gray-800 text-white rounded text-xs font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-lg z-50">
               {label}
             </span>
           </button>
@@ -80,17 +79,17 @@ export const SideBar = () => {
         onClick={toggleLanguage}
         onMouseEnter={() => setHoveredIcon('language')}
         onMouseLeave={() => setHoveredIcon(null)}
-        className="flex items-center justify-center w-12 h-12 rounded-lg border-2 border-cyber-cyan text-cyber-cyan transition-all duration-300 cursor-pointer relative group hover:border-cyber-magenta hover:text-cyber-magenta hover:shadow-[0_0_15px_rgba(0,217,255,0.5)]"
+        className="flex items-center justify-center w-12 h-12 rounded-lg bg-gray-50 text-gray-400 hover:bg-theme-primary/10 hover:text-theme-primary transition-all duration-300 cursor-pointer relative group"
       >
         <AiOutlineGlobal className="text-2xl" />
-        <span className="absolute left-full ml-3 px-3 py-1 bg-cyber-dark border-2 border-cyber-cyan text-cyber-cyan text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+        <span className="absolute left-full ml-3 px-3 py-1 bg-gray-800 text-white rounded text-xs font-medium whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-lg z-50">
           {currentLanguage === 'en' ? 'ES' : 'EN'}
         </span>
       </button>
 
       {/* Footer */}
       <div className="flex-shrink-0 text-center">
-        <p className="text-xs text-cyber-gray font-bold">© 2024</p>
+        <p className="text-xs text-gray-400 font-medium">© 2024</p>
       </div>
     </aside>
   );
