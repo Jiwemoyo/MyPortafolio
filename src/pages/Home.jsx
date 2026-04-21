@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { ModelViewer } from "../components/ModelViewer";
 
 export const Home = () => {
   const { t } = useTranslation();
@@ -64,15 +65,10 @@ export const Home = () => {
       {/* Columna Derecha - Elementos gráficos ZZZ style */}
       <div className="hidden md:flex flex-col w-1/3 min-w-[300px] gap-6">
 
-        {/* Graphic Box 1 - "Image placeholder" */}
-        <div className="flex-1 brutal-box bg-white flex flex-col items-center justify-center p-6 text-center relative overflow-hidden group">
-          <div className="absolute inset-x-0 top-0 h-4 bg-ik-dark opacity-10"></div>
-          <div className="w-32 h-32 border-4 border-dashed border-ik-dark rounded-full flex items-center justify-center mb-4 transition-transform group-hover:rotate-180 duration-700">
-            <span className="font-pixel text-2xl">IMG_SYS</span>
-          </div>
-          <h3 className="font-display text-2xl uppercase relative z-10 bg-ik-accent text-white px-2">
-            [Aquí iría una imagen]
-          </h3>
+        {/* Graphic Box 1 - "3D Model" */}
+        <div className="flex-1 brutal-box bg-white flex flex-col items-center justify-center p-0 relative overflow-hidden group min-h-[300px]">
+          <div className="absolute inset-x-0 top-0 h-4 bg-ik-dark opacity-10 z-10 w-full"></div>
+          <ModelViewer modelPath="/3D_models/Alesssandro_3D.glb" />
         </div>
 
         {/* Info Box 2 */}
