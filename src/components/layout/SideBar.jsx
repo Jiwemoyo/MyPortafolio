@@ -62,9 +62,9 @@ export const SideBar = () => {
             onClick={() => navigate(path)}
             onMouseEnter={() => setHoveredIcon(key)}
             onMouseLeave={() => setHoveredIcon(null)}
-            className={`flex items-center justify-center w-14 h-14 border-4 border-ik-dark bg-white transition-all cursor-pointer relative group ${activeNav === key
+            className={`flex items-center justify-center w-14 h-14 border-4 border-ik-dark transition-all cursor-pointer relative group ${activeNav === key
               ? 'bg-ik-accent text-white shadow-brutal translate-x-1 -translate-y-1'
-              : 'text-ik-dark shadow-brutal-active hover:shadow-brutal hover:-translate-y-1 hover:-translate-x-1'
+              : 'bg-white text-ik-dark shadow-brutal-active hover:shadow-brutal hover:-translate-y-1 hover:-translate-x-1'
               }`}
           >
             <Icon className="text-3xl" />
