@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import { useTranslation } from "react-i18next";
 import { AiOutlineMail, AiOutlinePhone } from "react-icons/ai";
@@ -10,6 +10,10 @@ export const Contact = () => {
   const form = useRef();
   const [alert, setAlert] = useState(null);
 
+  useEffect(() => {
+    emailjs.init('25e3DIpVlNzn8HQnL');
+  }, []);
+
   // Definir el array de redes sociales fuera del JSX
   const socialLinks = [
     { icon: <FaInstagram />, link: "https://www.instagram.com/jiwemoyot/" },
@@ -20,9 +24,7 @@ export const Contact = () => {
   const sendEmail = (e) => {
     e.preventDefault();
     emailjs
-      .sendForm('service_im8x4pe', 'template_4pnvlak', form.current, {
-        publicKey: '25e3DIpVlNzn8HQnL',
-      })
+      .sendForm('service_bfhh96v', 'template_4pnvlak', form.current)
       .then(
         () => {
           setAlert('success');
@@ -30,6 +32,7 @@ export const Contact = () => {
           setTimeout(() => setAlert(null), 3000);
         },
         (error) => {
+          console.error('Error sending email:', error);
           setAlert('error');
           setTimeout(() => setAlert(null), 3000);
         },

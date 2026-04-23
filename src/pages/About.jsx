@@ -96,7 +96,7 @@ export const About = () => {
         </div>
 
         {/* Filosofía */}
-        <div className="brutal-box bg-ik-dark p-6 md:p-8 relative text-ik-light overflow-hidden">
+        <div className="brutal-box bg-ik-dark p-6 md:p-8 relative text-ik-light">
           <div className="absolute -top-4 -left-4 bg-white text-ik-dark font-display px-3 py-1 text-xl border-4 border-ik-dark">
             04
           </div>
