@@ -17,8 +17,8 @@ export const About = () => {
           <h2 className="text-custom-celeste text-3xl lg:text-5xl font-extrabold animate-bounce text-center">{t("about-hi", { defaultValue: "¡Hola! Soy Alessandro 👋" })}</h2>
           <span className="text-custom-white text-lg lg:text-2xl italic mt-1 text-center max-w-xs lg:max-w-md">{t("about-catch", { defaultValue: "¡Listo para crear experiencias digitales memorables contigo!" })}</span>
           <a
-            href="/AlessandroCisneros_FullStackCV_EN.pdf"
-            download
+            href="/CV_2026_ES.pdf"
+            download="CV_2026_ES.pdf"
             className="mt-2 bg-custom-red text-custom-white font-bold px-6 py-3 rounded-lg shadow-lg hover:bg-custom-celeste hover:text-custom-blue transition-colors duration-300"
           >
             {t("download-cv", { defaultValue: "Descargar CV" })}

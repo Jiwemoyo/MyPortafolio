@@ -29,7 +29,7 @@ export const About = () => {
         </p>
 
         <a
-          href="/AlessandroCisneros_FullStackCV_EN.pdf"
+          href="/CV_2026_ES.pdf"
           download
           className="brutal-btn bg-ik-dark text-ik-light w-full md:w-auto text-lg"
         >
